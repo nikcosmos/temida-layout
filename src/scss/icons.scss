@@ -1,0 +1,77 @@
+@font-face {
+   font-family: 'font-icons';
+   src: url('../fonts/font-icons.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
+}
+
+i {
+   font-family: 'font-icons' !important;
+   speak: never;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+   font-size: 24px;
+
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_money:before {
+   content: '\e900';
+}
+.icon_pc-pulse:before {
+   content: '\e901';
+}
+.icon_pc-scheme:before {
+   content: '\e902';
+}
+.icon_protection:before {
+   content: '\e903';
+}
+.icon_service-check:before {
+   content: '\e904';
+}
+.icon_speed:before {
+   content: '\e905';
+}
+.icon_target:before {
+   content: '\e906';
+}
+.icon_trash:before {
+   content: '\e907';
+}
+.icon_warning:before {
+   content: '\e908';
+}
+.icon_arrow:before {
+   content: '\e909';
+}
+.icon_arrow-circle:before {
+   content: '\e90a';
+}
+.icon_basket:before {
+   content: '\e90b';
+}
+.icon_check:before {
+   content: '\e90c';
+}
+.icon_close:before {
+   content: '\e90d';
+}
+.icon_delete:before {
+   content: '\e90e';
+}
+.icon_document:before {
+   content: '\e90f';
+}
+.icon_dollar:before {
+   content: '\e910';
+}
+.icon_info:before {
+   content: '\e911';
+}

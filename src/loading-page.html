@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class='group/html'>
+@@include('html/head.html',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main>
+			<section class='pt-60 lg:pt-28'>
+				<div class='container max-w-container-l'>
+					<div class='mb-14'><img class='max-w-full mx-auto' src="@img/generate-loader.gif" alt="loader"></div>
+					<div class='mb-9'><img class='max-w-full mx-auto' src="@img/linear-loader.gif" alt="loader"></div>
+					<h1 class="text-center text-4xl mb-7 lg:text-2xl">Tworzymy Twój raport</h1>
+					<div class='flex justify-center gap-5 items-center mb-40 lg:flex-col lg:gap-2 lg:mb-32'>
+						<span class='h-5'>Sprawdzam:</span>
+						<div data-words class=" relative overflow-hidden min-w-[270px] h-5 ">
+							<span
+								class='word-active text-ellipsis transition-all duration-500 whitespace-nowrap  absolute left-0 lg:left-1/2 lg:-translate-x-1/2 text-_primary-400'>Bazy
+								dłużników
+							</span>
+							<span
+								class=' word-start text-ellipsis transition-all duration-500  whitespace-nowrap absolute left-0 lg:left-1/2 lg:-translate-x-1/2  text-_primary-400'>Rejestry
+								upadłości
+								i
+								zawieszeni a
+							</span>
+							<span
+								class=' word-start text-ellipsis transition-all duration-500  whitespace-nowrap absolute left-0 lg:left-1/2 lg:-translate-x-1/2  text-_primary-400'>Opinie
+								i
+								komentarze</span>
+							<span
+								class=' word-start text-ellipsis transition-all duration-500  whitespace-nowrap absolute left-0 lg:left-1/2 lg:-translate-x-1/2  text-_primary-400'>Wyniki
+								finansowe</span>
+							<span
+								class=' word-start text-ellipsis transition-all duration-500  whitespace-nowrap absolute left-0 lg:left-1/2 lg:-translate-x-1/2 text-_primary-400'>Strukturę
+								organizacji</span>
+							<span
+								class=' word-start text-ellipsis transition-all duration-500  whitespace-nowrap absolute left-0 lg:left-1/2 lg:-translate-x-1/2 text-_primary-400'>Powiązania
+								osobowe</span>
+							<span
+								class=' word-start text-ellipsis transition-all duration-500  whitespace-nowrap absolute left-0 lg:left-1/2 lg:-translate-x-1/2 text-_primary-400'>Powiązania
+								kapitałowe.</span>
+						</div>
+					</div>
+					<div class='mb-64 flex justify-center lg:mb-32'>
+						<img class='max-w-full' src="@img/header/logo-gray.svg" alt="logo">
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+</body>
+
+</html>

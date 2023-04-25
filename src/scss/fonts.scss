@@ -1,0 +1,27 @@
+@layer base {
+   @font-face {
+      font-family: 'Mulish';
+      font-weight: 400;
+      src: url('../fonts/Mulish-Regular.woff2') format('woff2'), url('../fonts/Mulish-Regular.woff') format('woff');
+   }
+   @font-face {
+      font-family: 'Mulish';
+      font-weight: 600;
+      src: url('../fonts/Mulish-SemiBold.woff2') format('woff2'), url('../fonts/Mulish-SemiBold.woff') format('woff');
+   }
+   @font-face {
+      font-family: 'Mulish';
+      font-weight: 700;
+      src: url('../fonts/Mulish-Bold.woff2') format('woff2'), url('../fonts/Mulish-Bold.woff') format('woff');
+   }
+   @font-face {
+      font-family: 'Sora';
+      font-weight: 600;
+      src: url('../fonts/Sora-SemiBold.woff2') format('woff2'), url('../fonts/Sora-SemiBold.woff') format('woff');
+   }
+
+   body {
+      font-family: 'Sora', sans-serif;
+      @apply text-_secondary text-base;
+   }
+}

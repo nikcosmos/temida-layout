@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class='group/html'>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<script src="js/app.min.js" defer></script>
+	<title>Главная</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class='fixed w-full top-0 left-0 bg-white z-10'>
+   <div class="container max-w-container-xl py-5 lg:py-3">
+      <nav class='flex justify-between items-center gap-4'>
+         <a class='max-w-[145px] flex-none' href="#"><img class='object-contain' src="img/header/logo-black.svg" alt="logo"></a>
+         <button type="button" class="icon-menu">
+            <span></span>
+         </button>
+         <ul class='lg:hidden flex gap-x-5 gap-y-3 flex-wrap justify-center font-semibold text-xl text-_secondary whitespace-nowrap '>
+            <li><a class='p-2 transition-all rounded-xl hover:bg-_gray-50  active:bg-_gray-200 ' href="#">Dla Biznesu</a></li>
+            <li><a class='p-2 transition-all rounded-xl hover:bg-_gray-50  active:bg-_gray-200 ' href="#">O systemie</a></li>
+            <li><a class='p-2 transition-all rounded-xl hover:bg-_gray-50  active:bg-_gray-200 ' href="#">Funkcje</a></li>
+            <li><a class='p-2 transition-all rounded-xl hover:bg-_gray-50  active:bg-_gray-200 ' href="#">O nas</a></li>
+            <li><a class='p-2 transition-all rounded-xl hover:bg-_gray-50  active:bg-_gray-200 ' href="#">Wiedza</a></li>
+            <li><a class='p-2 transition-all rounded-xl hover:bg-_gray-50  active:bg-_gray-200 ' href="#">Kontakt</a></li>
+         </ul>
+         <div class='text-center flex basis-[400px] grow-0 shrink items-center justify-between text-_primary lg:hidden '>
+            <button type="button" class="blue-underline-btn max-w-[165px]">TEMIDA APP</button>
+            <button type="button" class="blue-border-btn max-w-[195px] ">KUP RAPORT</button>
+         </div>
+      </nav>
+   </div>
+   <nav
+      class='z-10 transition-all duration-300 fixed top-0 invisible opacity-0  group-[.menu-open]/html:visible group-[.menu-open]/html:opacity-100 after:group-[.menu-open]/html:block left-0 w-full h-full bg-_secondary overflow-auto pt-28 pb-20 px-5 flex flex-col justify-between gap-14 after:content-[""] after:bg-_secondary after:fixed after:top-0 after:left-0 after:w-full after:h-[70px] after:hidden after:z-10 '>
+      <ul class='text-_gray-50 flex flex-col gap-14 text-xl font-semibold items-end relative z-0'>
+         <li><a class='p-2' href="#">Dla Biznesu</a></li>
+         <li><a class='p-2' href="#">O systemie</a></li>
+         <li><a class='p-2' href="#">Funkcje</a></li>
+         <li><a class='p-2' href="#">O nas</a></li>
+         <li><a class='p-2' href="#">Wiedza</a></li>
+         <li><a class='p-2' href="#">Kontakt</a></li>
+      </ul>
+      <a class='flex justify-center items-center ' href="#"><img class='max-w-full' src="img/header/logo-white.svg" alt="logo"></a>
+   </nav>
+</header>
+		<main>
+			<div class='container max-w-container-l'>
+				<section class='pt-32 pb-7 text-center'>
+					<img class='h-40 mx-auto mb-10' src="img/thanks/congratulation.svg" alt="congratulation">
+					<h1 class='text-5xl mb-5 lg:text-2xl'>Dziękujemy za zakup raportu Temidy!</h1>
+					<p class='max-w-xl mx-auto font-mulish font-semibold text-xl lg:text-base'>w <a href='#' class='font-sora text-_primary'>Temida.io</a> stawiamy
+						na
+						jakość -
+						każdy
+						raport jest
+						sprawdzany przez
+						analityka a dane
+						aktualizowane w
+						czasie
+						rzeczywistym.
+					</p>
+					<img class='h-14 my-8 mx-auto' src="img/circle-loader.gif" alt="loader">
+					<p class='font-mulish font-semibold'>Twój raport wyślemy do Ciebie na maila za 10 minut.</p>
+				</section>
+				<section
+					class='grid grid-cols-2 items-center justify-items-center gap-5 rounded-t-5xl bg-_primary-50 py-14 px-28 lg:rounded-t-4xl lg:px-5 lg:py-14 md:block md:space-y-10'>
+					<div class='xxs:flex gap-3'>
+						<img class='h-32 mx-auto mb-1 xxs:mb-0' src="img/thanks/reports.svg" alt="reports">
+						<div>
+							<div class='flex justify-center gap-12 text-5xl xxs:text-xl xxs:gap-2'>
+								<span class=' line-through text-_black-300'>49 zł</span>
+								<span class=' text-_primary'>19 zł.</span>
+							</div>
+							<span class='block text-xl text-center xxs:text-xs'>1 raport podstawowy</span>
+						</div>
+
+					</div>
+					<div class='md:text-center'>
+						<h2 class='text-4xl mb-5 lg:text-2xl'>Odbierz <span class='text-_primary'>rabat -60%</span> na kolejne raporty Temidy!</h2>
+						<p class='font-mulish text-2xl mb-5 lg:text-base'>Zamów pakiet kilku raportówi oszczędź nawet do 60%! Dostosuj pakiet do swoich potrzeb i
+							zyskajz Temidą.
+						</p>
+						<a class='blue-fill-btn max-w-xs md:mx-auto' href="#">Wybierz Paczkę</a>
+					</div>
+				</section>
+			</div>
+		</main>
+		<footer class='h-[475px] bg-_secondary flex-none'></footer>
+	</div>
+</body>
+
+</html>

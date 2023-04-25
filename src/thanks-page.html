@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class='group/html'>
+@@include('html/head.html',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/header.html',{})
+		<main>
+			<div class='container max-w-container-l'>
+				<section class='pt-32 pb-7 text-center'>
+					<img class='h-40 mx-auto mb-10' src="@img/thanks/congratulation.svg" alt="congratulation">
+					<h1 class='text-5xl mb-5 lg:text-2xl'>Dziękujemy za zakup raportu Temidy!</h1>
+					<p class='max-w-xl mx-auto font-mulish font-semibold text-xl lg:text-base'>w <a href='#' class='font-sora text-_primary'>Temida.io</a> stawiamy
+						na
+						jakość -
+						każdy
+						raport jest
+						sprawdzany przez
+						analityka a dane
+						aktualizowane w
+						czasie
+						rzeczywistym.
+					</p>
+					<img class='h-14 my-8 mx-auto' src="@img/circle-loader.gif" alt="loader">
+					<p class='font-mulish font-semibold'>Twój raport wyślemy do Ciebie na maila za 10 minut.</p>
+				</section>
+				<section
+					class='grid grid-cols-2 items-center justify-items-center gap-5 rounded-t-5xl bg-_primary-50 py-14 px-28 lg:rounded-t-4xl lg:px-5 lg:py-14 md:block md:space-y-10'>
+					<div class='xxs:flex gap-3'>
+						<img class='h-32 mx-auto mb-1 xxs:mb-0' src="@img/thanks/reports.svg" alt="reports">
+						<div>
+							<div class='flex justify-center gap-12 text-5xl xxs:text-xl xxs:gap-2'>
+								<span class=' line-through text-_black-300'>49 zł</span>
+								<span class=' text-_primary'>19 zł.</span>
+							</div>
+							<span class='block text-xl text-center xxs:text-xs'>1 raport podstawowy</span>
+						</div>
+
+					</div>
+					<div class='md:text-center'>
+						<h2 class='text-4xl mb-5 lg:text-2xl'>Odbierz <span class='text-_primary'>rabat -60%</span> na kolejne raporty Temidy!</h2>
+						<p class='font-mulish text-2xl mb-5 lg:text-base'>Zamów pakiet kilku raportówi oszczędź nawet do 60%! Dostosuj pakiet do swoich potrzeb i
+							zyskajz Temidą.
+						</p>
+						<a class='blue-fill-btn max-w-xs md:mx-auto' href="#">Wybierz Paczkę</a>
+					</div>
+				</section>
+			</div>
+		</main>
+		@@include('html/footer.html',{})
+	</div>
+</body>
+
+</html>
