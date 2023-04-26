@@ -51,13 +51,11 @@ module.exports = {
          },
          _gray: {
             50: '#F4F6F7',
+            100: '#E3E3E3',
             200: '#C9D2D8',
             DEFAULT: '#424D57',
          },
          white: '#ffffff',
-         border: {
-            DEFAULT: '',
-         },
       },
       fontSize: {
          xs: ['0.75rem', { lineHeight: '120%' }],
@@ -73,6 +71,7 @@ module.exports = {
          '7xl': ['4.5rem', { lineHeight: '120%' }],
          '8xl': ['6rem', { lineHeight: '120%' }],
          '9xl': ['8rem', { lineHeight: '120%' }],
+         40: ['2.5rem', { lineHeight: '120%' }],
       },
       borderRadius: {
          none: '0px',
@@ -92,7 +91,11 @@ module.exports = {
             'container-xl': '1400px',
             'container-l': '1170px',
          },
+         boxShadow: {
+            temp: '0 0 5px rgba(0, 0, 0, 0.3);',
+         },
       },
    },
+
    plugins: [],
 }

@@ -1,4 +1,5 @@
 @import '../../node_modules/swiper/swiper.scss';
+@import './tippi.scss';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,8 +17,19 @@
    main {
       @apply flex-auto;
    }
+   input[type='checkbox'],
+   input[type='radio'] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+   }
 }
 body {
+   > * {
+      min-width: 0;
+   }
    .lock & {
       overflow: hidden;
       touch-action: none;
@@ -29,16 +41,33 @@ body {
 //Buttons========================================================================================================================================================
 @layer components {
    .yellow-btn {
-      @apply w-full rounded-xl bg-_cta p-4 text-base uppercase transition-all hover:bg-_cta-300 focus-visible:outline  focus-visible:outline-4  focus-visible:outline-_black-200   active:bg-_cta  md:text-sm;
+      @apply block text-center w-full rounded-xl bg-_cta p-4 text-base uppercase transition-all hover:bg-_cta-300 focus-visible:outline  focus-visible:outline-4  focus-visible:outline-_black-200   active:bg-_cta  md:text-sm;
    }
    .blue-border-btn {
-      @apply w-full rounded-xl border-2 border-solid border-_primary p-4 hover:border-_primary-400   hover:text-_primary-400 focus-visible:outline  focus-visible:outline-4 focus-visible:outline-_black-200 active:border-_primary-600 active:text-_primary-600 disabled:border-_black-200 disabled:bg-_black-200 disabled:text-_black-400;
+      @apply text-_primary block text-center w-full rounded-xl border-2 border-solid border-_primary p-[14px] hover:border-_primary-400   hover:text-_primary-400 focus-visible:outline  focus-visible:outline-4 focus-visible:outline-_black-200 active:border-_primary-600 active:text-_primary-600 disabled:border-_black-200 disabled:bg-_black-200 disabled:text-_black-400;
    }
    .blue-underline-btn {
-      @apply w-full rounded-xl p-4 underline hover:text-_primary-400   focus-visible:outline  focus-visible:outline-4   focus-visible:outline-_black-200 active:text-_primary-600 disabled:text-_black-400;
+      @apply uppercase text-_primary block text-center w-full rounded-xl p-4 underline hover:text-_primary-400   focus-visible:outline  focus-visible:outline-4   focus-visible:outline-_black-200 active:text-_primary-600 disabled:text-_black-400 md:text-sm md:p-3;
    }
    .blue-fill-btn {
       @apply block w-full uppercase text-center rounded-xl p-4 text-white bg-_primary hover:bg-_primary-400 active:bg-_primary-600 transition-all;
+   }
+   .basket-item {
+      @apply grid grid-cols-4 items-center gap-5 font-mulish mb-2;
+      span {
+         &:nth-child(1) {
+            @apply col-span-2;
+         }
+         &:nth-child(2) {
+            @apply col-span-1 text-center;
+         }
+         &:nth-child(3) {
+            @apply col-span-1 text-center;
+         }
+      }
+      i {
+         @apply cursor-pointer p-1 rounded-full active:bg-_black-200 hover:text-_error transition-all;
+      }
    }
 }
 //Words-Switcher========================================================================================================================================================
@@ -115,8 +144,8 @@ body {
       display: block;
       background-color: #ffffff;
       border: 2px solid #c8c8c8;
-      border-radius: 16px;
-      padding: 16px 24px 16px 20px;
+      border-radius: 12px;
+      padding: 14px 24px 14px 20px;
       width: 100%;
       font-family: 'Mulish';
       font-weight: 400;
@@ -180,5 +209,284 @@ body {
       span {
          display: block;
       }
+   }
+}
+//CheckBox========================================================================================================================================================
+.checkbox {
+   display: flex;
+   gap: 8px;
+   align-items: center;
+   cursor: pointer;
+   width: fit-content;
+   span {
+      background: #ffffff;
+      border: 1px solid #a4a4a4;
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      display: block;
+      transition: all 0.3s ease 0s;
+      position: relative;
+      flex: none;
+   }
+   i.icon_check {
+      font-size: 12px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: all 0.3s ease 0s;
+   }
+   b {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      transition: all 0.3s ease 0s;
+      @media (max-width: 767.98px) {
+         font-size: 14px;
+      }
+   }
+   &:hover {
+      span {
+         border: 1px solid #383838;
+         transition: all 0.3s ease 0s;
+      }
+      b {
+         text-decoration-line: underline;
+         transition: all 0.3s ease 0s;
+      }
+   }
+   input:checked + span i.icon_check {
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 0.3s ease 0s;
+   }
+   input:focus-visible + span {
+      outline: 3px solid #cbcbcb;
+   }
+   &.checkbox_start {
+      align-items: start;
+   }
+   &.checkbox_big {
+      max-width: 440px;
+      gap: 20px;
+      span {
+         width: 30px;
+         height: 30px;
+      }
+      i.icon_check {
+         font-size: 18px;
+      }
+   }
+   // State ++++++++++++++++++++
+   &.error {
+      span {
+         border: 1px solid #e65f5f;
+      }
+   }
+}
+//Checkbox item========================================================================================================================================================
+.checkbox-item {
+   @apply relative cursor-pointer block p-2 border-2 border-_gray-200  rounded-xl transition-all;
+   h6 {
+      @apply mb-5 pointer-events-none;
+   }
+
+   i.icon_info {
+      @apply absolute bottom-1 left-1 text-_gray;
+      @media (max-width: 575.98px) {
+         @apply bottom-1 left-auto right-1;
+      }
+   }
+   span {
+      @apply block text-right pointer-events-none;
+      @media (max-width: 575.98px) {
+         @apply text-left;
+      }
+   }
+   &._active {
+      @apply border-_primary;
+      i {
+         @apply text-_primary;
+      }
+   }
+}
+//Basket========================================================================================================================================================
+.basket-btn {
+   @media (min-width: 991.98px) {
+      display: none;
+   }
+   position: fixed;
+   right: 30px;
+   bottom: 30px;
+   width: 60px;
+   height: 60px;
+   background: #ffdb5c;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   i.icon_basket {
+      font-size: 30px;
+      pointer-events: none;
+   }
+   span {
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 27px;
+      height: 27px;
+      position: absolute;
+      top: -14px;
+      right: 0;
+      color: #fff;
+      font-size: 14px;
+      font-family: 'Mulish';
+      background: #e65f5f;
+      border-radius: 50%;
+   }
+}
+.basket-mobile {
+   @media (max-width: 991.98px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      padding: 80px 15px;
+      overflow: auto;
+      background: rgba(19, 45, 70, 0.5);
+      z-index: 1000;
+      transition: all 0.3s ease 0s;
+      opacity: 0;
+      visibility: hidden;
+      &._active {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+   &__body {
+      @media (max-width: 991.98px) {
+         display: flex;
+         justify-content: center;
+         flex-direction: column;
+         align-items: center;
+         min-height: 100%;
+         width: 100%;
+      }
+   }
+   &__content {
+      @media (max-width: 991.98px) {
+         max-width: 690px;
+         width: 100%;
+         transition: all 0.3s ease 0s;
+         position: relative;
+         transform: translate(900px, 0px);
+         transition: all 0.3s ease 0s;
+         ._active & {
+            transform: translate(0px, 0px);
+            transition: all 0.3s ease 0s;
+         }
+      }
+   }
+   &__close-btn {
+      i {
+         pointer-events: none;
+      }
+      @media (min-width: 991.98px) {
+         display: none;
+      }
+      @media (max-width: 991.98px) {
+         color: #737b7d;
+         position: absolute;
+         padding: 10px;
+         top: 10px;
+         right: 10px;
+      }
+   }
+}
+//Popup========================================================================================================================================================
+.popup {
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   padding: 30px 15px;
+   overflow-x: hidden;
+   overflow: auto;
+   background: rgba(19, 45, 70, 0.5);
+   z-index: 1000;
+   visibility: hidden;
+   opacity: 0;
+   transition: all 0.3s ease 0s;
+   &._popup-open {
+      transition: all 0.3s ease 0s;
+      opacity: 1;
+      visibility: visible;
+   }
+   &__body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100%;
+      width: 100%;
+   }
+   &__content {
+      background: #eef4ff;
+      border-radius: 16px;
+      width: 100%;
+      transform: scale(0);
+      transition: all 0.3s ease 0s;
+      position: relative;
+      overflow: hidden;
+      ._popup-open & {
+         transform: scale(1);
+         transition: all 0.3s ease 0s;
+      }
+   }
+   &__close-btn {
+      position: absolute;
+      padding: 10px;
+      right: 5px;
+      top: 5px;
+      color: #737b7d;
+      i {
+         pointer-events: none;
+      }
+      @media (max-width: 767.98px) {
+         top: 0;
+         right: 0;
+      }
+   }
+}
+//Bullets========================================================================================================================================================
+.popup-bullets {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   flex-wrap: wrap;
+   .swiper-pagination-bullet {
+      display: block;
+      background: #afb2b6;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+   }
+   .swiper-pagination-bullet-active {
+      background: #24acb1;
+   }
+}
+.popup-nav-btn {
+   color: #4eafbb;
+   i {
+      font-size: 40px;
+      @media (max-width: 767.98px) {
+         font-size: 30px;
+      }
+   }
+   &:disabled {
+      color: #737b7d;
    }
 }

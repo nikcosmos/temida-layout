@@ -1,0 +1,54 @@
+<div id='formPopup' class='popup'>
+   <div class='popup__body'>
+      <div class="popup__content grid grid-cols-2 gap-10 max-w-[1070px] lg:max-w-none p-10 lg:block md:py-10 md:px-5 md:pb-5">
+         <div class='lg:hidden'>
+            <h4 class='mb-5'>Rozszerz raport o dodatkowe funkcje:</h4>
+            <p class='font-mulish text-sm font-semibold'>tutaj małe buttony do selekcji dodatkowych opcji, po kliknięciu w nie wygląd raportu zmieniał by się
+               dynamicznie (
+               może być
+               trudne w
+               implementacji)
+            </p>
+         </div>
+         <div>
+            <div id='popupSlider' class='swiper max-w-full mb-5'>
+               <div class='swiper-wrapper'>
+                  <div class="swiper-slide rounded-2xl overflow-hidden ">
+                     <img class='mx-auto' src="@img/slide-skeleton.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide rounded-2xl overflow-hidden ">
+                     <img class='mx-auto' src="@img/slide-skeleton.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide rounded-2xl overflow-hidden ">
+                     <img class='mx-auto' src="@img/slide-skeleton.jpg" alt="">
+                  </div>
+               </div>
+            </div>
+            <div class='flex gap-16 justify-center items-center md:gap-5'>
+               <button class='popup-nav-btn' id='popupPrevBtn' type="button"><i class='icon_arrow-circle block -rotate-180'></i></button>
+               <div id='popupBullets' class='popup-bullets'></div>
+               <button class='popup-nav-btn' id='popupNextBtn' type="button" class="class"><i class='icon_arrow-circle'></i></button>
+            </div>
+         </div>
+         <button type="button" class="popup__close-btn"><i class="icon_close"></i></button>
+      </div>
+   </div>
+</div>
+
+
+<script id='tippiTemp' type='text/template'>
+   <div >
+      <div class='p-5 bg-white rounded-2xl w-[420px] md:w-[290px] shadow-temp flex gap-2 text-_secondary'>
+         <div class='flex-none'><i class="icon_pc-scheme text-3xl"></i></div>
+         <div class='font-mulish font-semibold'>
+            <h5 class='mb-2'>Opinia zawiera:</h5>
+            <ul class='list-disc pl-5 text-sm space-y-2 '>
+               <li>Punkt 1</li>
+               <li>Punkt 1</li>
+               <li>Punkt 1</li>
+               <li>Punkt 1</li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</script>

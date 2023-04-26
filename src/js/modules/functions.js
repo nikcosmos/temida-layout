@@ -1,5 +1,7 @@
-import Swiper from 'swiper'
+import Swiper, { Navigation, Pagination } from 'swiper'
+
 import scrollIntoView from 'scroll-into-view-if-needed'
+import tippy from 'tippy.js'
 
 /* Проверка поддержки webp, добавление класса webp или no-webp для HTML */
 export function isWebp() {
@@ -93,7 +95,7 @@ export function menuClose() {
 
    function wordSwitcher() {
       const switchList = document.querySelectorAll('[data-words]')
-      switchList &&
+      switchList.length &&
          switchList.forEach((item) => {
             const wordList = [...item.children]
             let wordActive = 0
@@ -143,7 +145,7 @@ export function menuClose() {
       },
    })
    const nextButtons = document.querySelectorAll('.next-icon-js')
-   nextButtons &&
+   nextButtons.length &&
       nextButtons.forEach((button) => {
          button.addEventListener('click', () => {
             stepSlider.slideNext()
@@ -159,5 +161,108 @@ export function menuClose() {
             behavior: 'smooth',
             scrollMode: 'if-needed',
          })
+      })
+})()
+//CheckBoxItem========================================================================================================================================================
+!(function checkBoxItem() {
+   const checkBoxList = document.querySelector('.checkBoxList')
+   checkBoxList &&
+      checkBoxList.addEventListener('click', (el) => {
+         if (!el.target.classList.contains('checkbox-item')) return
+         el.target.classList.toggle('_active')
+      })
+   const tippiTemp = document.getElementById('tippiTemp')
+   const tippiList = document.querySelectorAll('.tippiItem')
+   tippiList.length &&
+      tippiList.forEach((item) => {
+         tippy(item, {
+            placement: window.innerWidth > 991 ? 'right-start' : 'auto',
+            content: tippiTemp.innerHTML,
+            maxWidth: 'none',
+            allowHTML: true,
+            trigger: 'click',
+            animation: 'scale',
+            interactive: true,
+         })
+      })
+})()
+//Basket========================================================================================================================================================
+!(function initBasket() {
+   const basketBtn = document.getElementById('basketBtn')
+   const basketModal = document.getElementById('basketContent')
+   basketBtn &&
+      basketBtn.addEventListener('click', () => {
+         basketModal.classList.add('_active')
+         bodyLock()
+      })
+   basketModal &&
+      basketModal.addEventListener('click', (el) => {
+         if (
+            el.target.classList.contains('basket-mobile') ||
+            el.target.classList.contains('basket-mobile__body') ||
+            el.target.classList.contains('basket-mobile__close-btn')
+         ) {
+            basketModal.classList.remove('_active')
+            bodyUnlock()
+         }
+         if (el.target.classList.contains('basket-scroll-btn')) {
+            basketModal.classList.remove('_active')
+            bodyUnlock()
+            formScroll()
+         }
+      })
+})()
+//FormScroll========================================================================================================================================================
+const goFormBtn = document.getElementById('goFormBtn')
+goFormBtn && goFormBtn.addEventListener('click', formScroll)
+function formScroll() {
+   scrollIntoView(document.getElementById('formSection'), {
+      behavior: 'smooth',
+      scrollMode: 'if-needed',
+      block: 'start',
+      nearest: document.getElementById('formSection'),
+   })
+}
+//FormPopup========================================================================================================================================================
+!(function formPopupInit() {
+   const popupSlider = new Swiper('#popupSlider', {
+      modules: [Pagination, Navigation],
+      slidesPerView: 1,
+      spaceBetween: 20,
+      disable: true,
+      pagination: {
+         el: '#popupBullets',
+         type: 'bullets',
+      },
+      navigation: {
+         nextEl: '#popupNextBtn',
+         prevEl: '#popupPrevBtn',
+      },
+      breakpoints: {
+         0: {
+            centeredSlides: true,
+         },
+      },
+   })
+
+   const formPopup = document.getElementById('formPopup')
+   const formPopupBtnsList = document.querySelectorAll('[data-form-popup]')
+
+   formPopupBtnsList.length &&
+      formPopupBtnsList.forEach((btn) => {
+         btn.addEventListener('click', () => {
+            formPopup.classList.add('_popup-open')
+            popupSlider.enable()
+            bodyLock()
+         })
+      })
+
+   formPopup &&
+      formPopup.addEventListener('click', (el) => {
+         if (el.target.classList.contains('popup__close-btn') || el.target.classList.contains('popup ') || el.target.classList.contains('popup__body')) {
+            formPopup.classList.remove('_popup-open')
+            popupSlider.disable()
+            bodyUnlock()
+         }
       })
 })()
