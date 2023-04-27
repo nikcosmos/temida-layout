@@ -54,6 +54,7 @@ module.exports = {
             100: '#E3E3E3',
             200: '#C9D2D8',
             DEFAULT: '#424D57',
+            600: '#4F5F6B',
          },
          white: '#ffffff',
       },
@@ -92,7 +93,8 @@ module.exports = {
             'container-l': '1170px',
          },
          boxShadow: {
-            temp: '0 0 5px rgba(0, 0, 0, 0.3);',
+            temp: '0 0 5px rgba(0, 0, 0, 0.3)',
+            outline: '0 0 0px 5px rgb(203, 203, 203)',
          },
       },
    },

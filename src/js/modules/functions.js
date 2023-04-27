@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Pagination } from 'swiper'
+import Swiper, { Navigation, Pagination, Zoom } from 'swiper'
 
 import scrollIntoView from 'scroll-into-view-if-needed'
 import tippy from 'tippy.js'
@@ -153,7 +153,7 @@ export function menuClose() {
       })
 })()
 //SmoothScrooll========================================================================================================================================================
-!(function mainPageScroll() {
+!(function initMainPageScroll() {
    const goTopBtn = document.getElementById('goTopForm')
    goTopBtn &&
       goTopBtn.addEventListener('click', (el) => {
@@ -213,8 +213,10 @@ export function menuClose() {
       })
 })()
 //FormScroll========================================================================================================================================================
-const goFormBtn = document.getElementById('goFormBtn')
-goFormBtn && goFormBtn.addEventListener('click', formScroll)
+!(function initFormScroll() {
+   const goFormBtn = document.getElementById('goFormBtn')
+   goFormBtn && goFormBtn.addEventListener('click', formScroll)
+})()
 function formScroll() {
    scrollIntoView(document.getElementById('formSection'), {
       behavior: 'smooth',
@@ -226,10 +228,12 @@ function formScroll() {
 //FormPopup========================================================================================================================================================
 !(function formPopupInit() {
    const popupSlider = new Swiper('#popupSlider', {
-      modules: [Pagination, Navigation],
+      modules: [Pagination, Navigation, Zoom],
       slidesPerView: 1,
       spaceBetween: 20,
       disable: true,
+      grabCursor: true,
+      zoom: true,
       pagination: {
          el: '#popupBullets',
          type: 'bullets',
